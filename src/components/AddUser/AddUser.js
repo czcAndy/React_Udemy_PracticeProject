@@ -6,19 +6,25 @@ const AddUser = props => {
     
     var [name, setName] = useState('');
     var [age, setAge] = useState(0);
+    var [errorMessage, setErrorMessage] = useState('');
 
-    var[isValid, setIsvalid] = useState(true);
+    var[isInputValid, setInputIsvalid] = useState(true);
 
     const submitFormHandler = event => {
         event.preventDefault();
 
-
         if (name.length === 0 && age <= 0){
-            //both invalid
+            setInputIsvalid(false);
+            setErrorMessage("Make sure both the name and the age fields are filled in")
+            return;
         } else if (name.length === 0){
-            // invalid name
+            setInputIsvalid(false);
+            setErrorMessage("Please enter your name")
+            return;
         } else if (age <= 0) {
-            // invalid age
+            setErrorMessage("Please enter a valid age")
+            setInputIsvalid(false);
+            return;
         }
 
         var user = {
@@ -46,11 +52,11 @@ const AddUser = props => {
             <input className="contact-input-form" id="name" type="text" name="name" onChange={inputNameChangeHandler}></input>
 
             <label className="contact-label-form" htmlFor="age">Age</label>
-            <input className="contact-input-form" id="age" type="text" name="age" onChange={inputAgeChangeHandler}></input>
+            <input className="contact-input-form" id="age" type="number" name="age" min="1" onChange={inputAgeChangeHandler}></input>
 
             <input className="primary-button" type="submit"></input>
         </form>
-        <ModalWindow></ModalWindow>
+        <ModalWindow open={!isInputValid} onClose={() => setInputIsvalid(true)} message={errorMessage}></ModalWindow>
         </>
     )
 };
