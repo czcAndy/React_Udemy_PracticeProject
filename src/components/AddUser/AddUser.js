@@ -54,7 +54,7 @@ const AddUser = props => {
             <label className="contact-label-form" htmlFor="age">Age</label>
             <input className="contact-input-form" id="age" type="number" name="age" min="1" onChange={inputAgeChangeHandler}></input>
 
-            <input className="primary-button" type="submit"></input>
+            <input className="primary-button" type="submit" value="Submit"></input>
         </form>
         <ModalWindow open={!isInputValid} onClose={() => setInputIsvalid(true)} message={errorMessage}></ModalWindow>
         </>

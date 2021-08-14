@@ -14,9 +14,9 @@ const ModalWindow = (props) => {
         <h1 className="modal-title">Action needed</h1>
         <p className="modal-message">{props.message}</p>
       </div>
-      <div className="modal-background" onClick={onHideModal}></div>
+      <div title="modal-background" className="modal-background"  onClick={onHideModal}></div>
     </>,
-    document.getElementById("modal")
+    document.getElementById('modal')
   );
 };
 
