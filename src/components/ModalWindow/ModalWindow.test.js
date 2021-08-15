@@ -10,7 +10,13 @@ describe('<ModalWindow>', () => {
     });
 
     it('renders', () => {
-        render(<ModalWindow/>, global.document.getElementById('modal'));
+        render(<ModalWindow open={true}/>, global.document.getElementById('modal'));
+        expect(global.document.getElementById('modal').childElementCount).not.toEqual(0);
+    });
+
+    it('is hidden', () => {
+        render(<ModalWindow open={false}/>, global.document.getElementById('modal'));
+        expect(global.document.getElementById('modal').childElementCount).toEqual(0);
     });
 
     it('shows the correct message', () => {
