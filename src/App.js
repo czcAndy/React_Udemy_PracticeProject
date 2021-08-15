@@ -1,11 +1,19 @@
+import { useState } from 'react';
 import './App.css';
 import AddUser from './components/AddUser/AddUser';
-import DispayUsers from './components/DsiplayUsers/DisplayUsers';
+import DispayUsers from './components/DisplayUsers/DisplayUsers';
 
 const App = () => {
 
+  const [userList, setUserList] = useState([]);
+
   const onSubmitUserHandler = (user) => {
-    console.log(user);
+    setUserList(prevUserList => {
+      const updatedList = [...prevUserList];
+      const userWithId = {...user, 'id': Math.random().toString()};
+      updatedList.unshift(userWithId);
+      return updatedList;
+    })
   }
 
   return (
@@ -14,7 +22,7 @@ const App = () => {
         <AddUser onSubmit={onSubmitUserHandler}></AddUser>
      </section>
      <section>
-        <DispayUsers></DispayUsers>
+        <DispayUsers users={userList}></DispayUsers>
      </section>
    </div>
   );
