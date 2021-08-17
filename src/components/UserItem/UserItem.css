@@ -6,13 +6,8 @@
 
 .userListItem-name {
     padding: 0.5rem 0.5rem 0 0.5rem;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px 5px 0px 0px;
-    border-bottom: none;
     margin:0px;
-    background-color: white;
+    width: 100%;
 }
 
 .userListItem-age {
@@ -25,4 +20,32 @@
     border-style: solid;
     border-width: 1px;
     border-top:none;
+}
+
+.userListItem-header{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color: white;
+
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: none;
+}
+
+.userListItem-close{
+    margin-left:auto;
+    background-color: transparent;
+    margin-right: 0.2em;
+    border:none;
+    font-weight: bold;
+    opacity: 0.5;
+
+    cursor: pointer;
+}
+
+.userListItem-close:hover{
+    opacity: 1;
 }

@@ -16,13 +16,22 @@ const App = () => {
     })
   }
 
+  const onDeleteUserHandler = (id) => {
+    setUserList(prevUserList => {
+      const updatedList = [...prevUserList];
+      const index = updatedList.findIndex(u => u.id === id);
+      updatedList.splice(index, 1);
+      return updatedList;
+    })
+  }
+
   return (
    <div>
      <section>
         <AddUser onSubmit={onSubmitUserHandler}></AddUser>
      </section>
      <section>
-        <DispayUsers users={userList}></DispayUsers>
+        <DispayUsers users={userList} onDeleteItem={onDeleteUserHandler}></DispayUsers>
      </section>
    </div>
   );

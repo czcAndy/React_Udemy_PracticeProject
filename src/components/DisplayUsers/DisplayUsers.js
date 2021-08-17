@@ -4,11 +4,15 @@ import "./DisplayUsers.css";
 const DispayUsers = (props) => {
   let content = <p className="noUserDisplayMessage">No users added yet.</p>;
 
+  const handleItemDeletion = (id) => {
+    props.onDeleteItem(id);
+  }
+
   if (props.users && props.users.length > 0) {
     content = (
       <ul className="displayUsers-container">
         {props.users.map((u) => (
-          <UserItem name={u.name} age={u.age} key={u.id}/>
+          <UserItem user={u} key={u.id} onDelete={handleItemDeletion}/>
         ))}
       </ul>
     );
