@@ -1,3 +1,4 @@
+import UserItem from "../UserItem/UserItem";
 import "./DisplayUsers.css";
 
 const DispayUsers = (props) => {
@@ -7,10 +8,7 @@ const DispayUsers = (props) => {
     content = (
       <ul className="displayUsers-container">
         {props.users.map((u) => (
-          <li className="userListItem" key={u.id}>
-            <h3 className="userListItem-name">{u.name}</h3>
-            <p className="userListItem-age">{u.age}</p>
-          </li>
+          <UserItem name={u.name} age={u.age} key={u.id}/>
         ))}
       </ul>
     );
