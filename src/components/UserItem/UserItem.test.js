@@ -3,6 +3,10 @@ import UserItem from './UserItem';
 
 
 describe('<UserItem>', () => {
+    afterEach(() => {
+        jest.clearAllMocks();
+      });
+      
     it('renders name and age correctly', () => {
         const user = {id:1, name:'User', age:10};
         const {getByText} = render(<UserItem user={user}/>)

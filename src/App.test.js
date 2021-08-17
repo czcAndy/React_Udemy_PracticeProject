@@ -4,6 +4,11 @@ import App from './App';
 
 
 describe("Test App", () => {
+  
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('renders', () => {
     render(<App></App>)
   });

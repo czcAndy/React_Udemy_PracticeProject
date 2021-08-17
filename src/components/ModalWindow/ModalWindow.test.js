@@ -9,6 +9,10 @@ describe('<ModalWindow>', () => {
         body.appendChild(modalRoot);
     });
 
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
     it('renders', () => {
         render(<ModalWindow open={true}/>, global.document.getElementById('modal'));
         expect(global.document.getElementById('modal').childElementCount).not.toEqual(0);
