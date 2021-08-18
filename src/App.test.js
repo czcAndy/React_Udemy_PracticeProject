@@ -38,7 +38,7 @@ describe("Test App", () => {
     jest.spyOn(React, 'useState').mockImplementationOnce(() => React.useState(userList));
 
     const { queryByText, container } = render(<App />);
-    const user2btn = container.getElementsByClassName("userListItem-close")[0];
+    const user2btn = container.getElementsByClassName("close")[0];
     fireEvent.click(user2btn);
     
     expect(queryByText(/^User 2$/i)).not.toBeNull();

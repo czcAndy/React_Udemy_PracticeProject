@@ -1,16 +1,16 @@
-.userListItem {
+.item {
     list-style: none;
     margin-bottom: 1em;
     cursor: pointer;
 }
 
-.userListItem-name {
+.name {
     padding: 0.5rem 0.5rem 0 0.5rem;
     margin:0px;
     width: 100%;
 }
 
-.userListItem-age {
+.age {
     font-weight: bold;
     background-color: #f2f2f2;
     padding: 0.5rem 0rem 0.5rem 0.5rem;
@@ -22,7 +22,7 @@
     border-top:none;
 }
 
-.userListItem-header{
+.header{
     display: flex;
     flex-direction: row;
     flex-grow: 1;
@@ -35,7 +35,7 @@
     border-bottom: none;
 }
 
-.userListItem-close{
+.close{
     margin-left:auto;
     background-color: transparent;
     margin-right: 0.2em;
@@ -46,6 +46,6 @@
     cursor: pointer;
 }
 
-.userListItem-close:hover{
+.close:hover{
     opacity: 1;
 }

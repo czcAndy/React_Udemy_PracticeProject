@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ModalWindow from '../ModalWindow/ModalWindow.js'
-import './AddUser.css';
+import styles from './AddUser.module.css';
 
 const AddUser = props => {
     
@@ -47,14 +47,14 @@ const AddUser = props => {
 
     return (
         <>
-         <form className="contact-form" onSubmit={submitFormHandler}>
-            <label className="contact-label-form" htmlFor="name">Name</label>
-            <input className="contact-input-form" id="name" type="text" name="name" onChange={inputNameChangeHandler}></input>
+         <form className={styles['form']} onSubmit={submitFormHandler}>
+            <label className={styles['label-form']} htmlFor="name">Name</label>
+            <input className={styles['input-form']} id="name" type="text" name="name" onChange={inputNameChangeHandler}></input>
 
-            <label className="contact-label-form" htmlFor="age">Age</label>
-            <input className="contact-input-form" id="age" type="number" name="age" min="1" onChange={inputAgeChangeHandler}></input>
+            <label className={styles['label-form']} htmlFor="age">Age</label>
+            <input className={styles['input-form']} id="age" type="number" name="age" min="1" onChange={inputAgeChangeHandler}></input>
 
-            <input className="primary-button" type="submit" value="Submit"></input>
+            <input className={styles['primary-button']} type="submit" value="Submit"></input>
         </form>
         <ModalWindow open={!isInputValid} onClose={() => setInputIsvalid(true)} message={errorMessage}></ModalWindow>
         </>

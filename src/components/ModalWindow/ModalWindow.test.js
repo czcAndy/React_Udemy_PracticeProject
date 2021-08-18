@@ -32,7 +32,7 @@ describe('<ModalWindow>', () => {
     it('delegates closing the popup', () => {
         const mock = jest.fn();
         const {getByTitle} = render(<ModalWindow open={true} onClose={mock} message='Test'></ModalWindow>);
-        const background = getByTitle('modal-background');
+        const background = getByTitle('background');
 
         fireEvent.click(background);
         expect(mock).toBeCalled();

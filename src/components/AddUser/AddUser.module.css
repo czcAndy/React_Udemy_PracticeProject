@@ -1,4 +1,4 @@
-.contact-form{
+.form{
     margin-left: auto;
     margin-right: auto;
     max-width: 600px;
@@ -6,14 +6,14 @@
     margin-top:5em;
 }
 
-.contact-input-form{
+.input-form{
     width: 100%;
     box-sizing: border-box;
     padding: 0.8em;
     margin-bottom: 0.5em;
 }
 
-.contact-label-form{
+.label-form{
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 0.2em;

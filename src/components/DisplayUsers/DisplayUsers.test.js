@@ -42,7 +42,7 @@ describe("<DisplayUsers>", () => {
     const { container } = render(
       <DisplayUsers users={userList} onDeleteItem={mock} />
     );
-    const user2btn = container.getElementsByClassName("userListItem-close")[0];
+    const user2btn = container.getElementsByClassName("close")[0];
     fireEvent.click(user2btn);
 
     expect(mock).toHaveBeenCalledWith(1);
